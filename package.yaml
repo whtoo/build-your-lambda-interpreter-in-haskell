@@ -1,0 +1,72 @@
+name: lambda-interpreter
+version: 0.1.0.0
+github: "yourusername/lambda-interpreter"
+license: MIT
+author: "Your Name"
+maintainer: "your.email@example.com"
+copyright: "2025 Your Name"
+
+extra-source-files:
+  - README.md
+
+# Metadata used when publishing your package
+synopsis: Type-safe lambda calculus interpreter with Hindley-Milner type inference
+category: Compiler
+description: |
+  A pedagogical lambda calculus interpreter demonstrating:
+  * Abstract Syntax Trees (ADTs)
+  * Parser combinators (Megaparsec)
+  * Hindley-Milner type inference
+  * Weak Head Normal Form evaluation
+  * Monad transformers for REPL
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+
+dependencies:
+  - base >= 4.17 && < 5
+  - megaparsec >= 9.0
+  - parser-combinators
+  - prettyprinter >= 1.7
+  - containers >= 0.6
+  - mtl >= 2.2.2
+  - transformers
+  - tasty >= 1.4
+  - tasty-quickcheck >= 0.10
+  - QuickCheck >= 2.14
+
+ghc-options:
+  - -Wall
+  - -Wcompat
+  - -Widentities
+  - -Wincomplete-record-updates
+  - -Wincomplete-uni-patterns
+  - -Wmissing-home-modules
+  - -Wpartial-fields
+  - -Wredundant-constraints
+
+library:
+  source-dirs: src
+
+executables:
+  lambda-interpreter-exe:
+    main: Main.hs
+    source-dirs: app
+    ghc-options:
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
+    dependencies:
+      - lambda-interpreter
+
+tests:
+  lambda-interpreter-test:
+    main: Spec.hs
+    source-dirs: test
+    ghc-options:
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
+    dependencies:
+      - lambda-interpreter

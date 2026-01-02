@@ -1,0 +1,13 @@
+cradle:
+  stack:
+    - path: "./src"
+      component: "lambda-interpreter:lib"
+
+    - path: "./app/Main.hs"
+      component: "lambda-interpreter:exe:lambda-interpreter-exe"
+
+    - path: "./app/Paths_lambda_interpreter.hs"
+      component: "lambda-interpreter:exe:lambda-interpreter-exe"
+
+    - path: "./test"
+      component: "lambda-interpreter:test:lambda-interpreter-test"

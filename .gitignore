@@ -1,0 +1,52 @@
+# Haskell build outputs
+dist/
+dist-newstyle/
+*.hi
+*.o
+*.chi
+*.chs.h
+*.dyn_o
+*.dyn_hi
+*.prof
+*.aux
+*.hp
+*.eventlog
+*.cabal
+*.cabal.sig
+*.cabal.config
+*.cabal.sandbox.config
+.cabal-sandbox/
+cabal.sandbox.config
+cabal.config
+
+# Stack build outputs
+.stack-work/
+stack.yaml.lock
+
+# GHC specific
+.ghc.environment.*
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Temporary files
+*.tmp
+*.bak
+*.log
+
+# Test and coverage reports
+.hpc/
+test-report.xml
+
+# Documentation build outputs
+docs/_build/
+docs/_site/
+
+# OS specific
+Thumbs.db
+desktop.ini
