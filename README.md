@@ -1,5 +1,7 @@
 # Lambda Calculus Interpreter - Haskell 学习项目
 
+> 📖 **语言语法**: [查看完整的语法定义与例子](docs/language_syntax.md)
+
 这是一个**项目制 Haskell 教程**,通过从零构建一个类型安全的 Lambda 演算解释器,深入学习 Haskell 的核心概念。
 
 ## 项目概述
@@ -18,6 +20,7 @@
 
 ```
 docs/
+├── language_syntax.md           # 📚 语言语法定义与例子
 ├── 01_environment_setup.md      # Day 1: 环境配置
 ├── 02_adt_and_ast.md            # Day 2-3: ADT 与 AST
 ├── 03_parser_combinators.md     # Day 4-5: 解析器组合子

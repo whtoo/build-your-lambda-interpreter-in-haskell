@@ -1,5 +1,7 @@
 # Phase 2: 抽象语法树 (AST) - 代数数据类型
 
+> 📖 **参考文档**: [语言语法定义与例子](language_syntax.md) - 完整的语法规范和例子
+
 ## 学习目标
 
 - 理解什么是代数数据类型 (ADT)
@@ -107,14 +109,39 @@ expr1 = "(1 + 2) * 3"
 expr2 = "1 + 2 * 3"  -- 优先级错误!
 
 -- AST 表示 (结构清晰)
-expr1 = Mul (Add (Lit 1) (Lit 2)) (Lit 3)
-expr2 = Add (Lit 1) (Mul (Lit 2) (Lit 3))
+expr1 = Mul (Add (LitInt 1) (LitInt 2)) (LitInt 3)
+expr2 = Add (LitInt 1) (Mul (LitInt 2) (LitInt 3))
 ```
 
 AST 天然避免了:
 - 运算符优先级混淆
 - 括号匹配错误
 - 词法/语法错误
+
+### 2.2.4 本语言的表达式类型
+
+我们的语言支持以下表达式（详见 [语法定义](language_syntax.md)）：
+
+```haskell
+-- 基本表达式
+Var "x"                    -- 变量 x
+LitInt 42                  -- 整数 42
+LitBool True               -- 布尔值 true
+
+-- Lambda 表达式
+Lam "x" (Var "x")         -- λx. x (恒等函数)
+Lam "x" (Lam "y" (Var "x")) -- λx. λy. x (常数函数)
+
+-- 函数应用
+App (Lam "x" (Var "x")) (LitInt 5)  -- (λx. x) 5
+
+-- 算术运算
+Add (LitInt 1) (LitInt 2)  -- 1 + 2
+Mul (LitInt 3) (LitInt 4)  -- 3 * 4
+
+-- 条件表达式
+If (LitBool True) (LitInt 1) (LitInt 0)  -- if true then 1 else 0
+```
 
 ---
 
@@ -133,19 +160,28 @@ Lambda 演算是最简单的编程语言,只有 3 种表达式:
 ### 2.3.2 完整表达式类型
 
 ```haskell
--- TODO: 补全 Expr 类型定义
+-- 我们的语言支持的完整表达式类型
+-- 参见 [语法定义](language_syntax.md) 获取详细信息
 
--- 提示: 需要支持:
---   1. 变量 (Var)
---   2. Lambda 抽象 (Lam)
---   3. 函数应用 (App)
---   4. 字面量 (Lit Int, Lit Bool)
---   5. 基本运算 (Add, Sub, Mul, Div, If)
-
--- 你的实现:
 data Expr
-  = TODO  -- TODO: 实现这个类型定义
+  = Var String        -- 变量 (例如: x, foo, myVar)
+  | Lam String Expr   -- Lambda 抽象 (例如: \x -> body)
+  | App Expr Expr     -- 函数应用 (例如: f x)
+  | LitInt Int        -- 整数字面量 (例如: 42, 0, -1)
+  | LitBool Bool      -- 布尔字面量 (例如: true, false)
+  | Add Expr Expr     -- 加法 (例如: e1 + e2)
+  | Mul Expr Expr     -- 乘法 (例如: e1 * e2)
+  | If Expr Expr Expr -- 条件表达式 (if c then t else f)
   deriving (Show, Eq)
+
+-- 对应的语法例子:
+-- Var "x"           ⟷ x
+-- Lam "x" (Var "x") ⟷ \x -> x
+-- App (Var "f") (Var "x") ⟷ f x
+-- LitInt 42         ⟷ 42
+-- LitBool True      ⟷ true
+-- Add (LitInt 1) (LitInt 2) ⟷ 1 + 2
+-- If (LitBool True) (LitInt 1) (LitInt 0) ⟷ if true then 1 else 0
 ```
 
 ### 2.3.3 Lambda 演算例子

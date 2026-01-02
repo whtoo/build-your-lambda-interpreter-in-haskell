@@ -1,5 +1,7 @@
 # Phase 4: 类型推断 (Type Inference)
 
+> 📖 **参考文档**: [语言语法定义与例子](language_syntax.md) - 完整的语法规范和类型推断例子
+
 ## 学习目标
 
 - 理解 Hindley-Milner 类型推断算法
