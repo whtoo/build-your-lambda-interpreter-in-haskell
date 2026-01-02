@@ -1,10 +1,10 @@
 name: lambda-interpreter
 version: 0.1.0.0
-github: "yourusername/lambda-interpreter"
+github: "yourusername/lambda-interpreter"  # 替换为你的 GitHub 用户名
 license: MIT
-author: "Your Name"
-maintainer: "your.email@example.com"
-copyright: "2025 Your Name"
+author: "Lambda Interpreter Contributors"
+maintainer: "your.email@example.com"       # 替换为你的邮箱
+copyright: "2025 Lambda Interpreter Contributors"
 
 extra-source-files:
   - README.md

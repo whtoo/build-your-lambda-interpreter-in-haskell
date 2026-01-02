@@ -21,7 +21,8 @@ curl -sSL https://get.haskellstack.org/ | sh
 
 ### 2. 克隆并构建
 ```bash
-git clone <your-repo-url> haskell_divein
+# 克隆项目 (替换为实际仓库地址)
+git clone https://github.com/yourusername/lambda-interpreter.git haskell_divein
 cd haskell_divein
 stack build
 ```
@@ -480,6 +481,28 @@ stack test --test-arguments="-v"
 ## 📄 许可证
 
 MIT License - 详见 [LICENSE](LICENSE) 文件
+
+## 📋 项目信息
+
+- **维护者**: Lambda Interpreter Contributors
+- **许可证**: MIT License
+- **项目主页**: `https://github.com/yourusername/lambda-interpreter`
+- **问题反馈**: 请使用 GitHub Issues
+- **贡献指南**: 欢迎 Pull Request!
+
+### 如何贡献
+
+1. Fork 本项目
+2. 创建特性分支 (`git checkout -b feature/amazing-feature`)
+3. 提交更改 (`git commit -m 'Add amazing feature'`)
+4. 推送到分支 (`git push origin feature/amazing-feature`)
+5. 创建 Pull Request
+
+### 项目状态
+
+- ✅ 基础架构完成
+- 🔄 文档持续完善中
+- 🎯 欢迎社区贡献
 
 ---
 
