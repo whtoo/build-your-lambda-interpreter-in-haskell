@@ -1,9 +1,9 @@
 name: lambda-interpreter
 version: 0.1.0.0
-github: "yourusername/lambda-interpreter"  # 替换为你的 GitHub 用户名
+github: "whtoo/lambda-interpreter"  # 替换为你的 GitHub 用户名
 license: MIT
 author: "Lambda Interpreter Contributors"
-maintainer: "your.email@example.com"       # 替换为你的邮箱
+maintainer: "drdangran@gmail.com"       # 替换为你的邮箱
 copyright: "2025 Lambda Interpreter Contributors"
 
 extra-source-files:
@@ -24,7 +24,7 @@ description: |
 # complications of embedding Haddock markup inside cabal files, it is
 # common to point users to the README.md file.
 
-dependencies:
+dependency:
   - base >= 4.17 && < 5
   - megaparsec >= 9.0
   - parser-combinators

@@ -486,7 +486,7 @@ MIT License - 详见 [LICENSE](LICENSE) 文件
 
 - **维护者**: Lambda Interpreter Contributors
 - **许可证**: MIT License
-- **项目主页**: `https://github.com/yourusername/lambda-interpreter`
+- **项目主页**: `https://github.com/whtoo/lambda-interpreter`
 - **问题反馈**: 请使用 GitHub Issues
 - **贡献指南**: 欢迎 Pull Request!
 
